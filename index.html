@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlantica 1963</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #012a36;
+            --text-color: #e0e0e0;
+            --text-muted-color: #a0b0b8;
+            --header-color: #e8d5a3;
+            --primary-contrast-color: #012a36;
+            --accent-color: #b89b70;
+            --accent-hover-color: #e8d5a3;
+            --card-bg-color: rgba(0, 0, 0, 0.3);
+            --card-border-color: rgba(184, 155, 112, 0.3);
+            --input-bg-color: rgba(2, 26, 34, 0.8);
+            --input-border-color: rgba(184, 155, 112, 0.5);
+            --danger-color: #ef4444;
+            --danger-hover-color: #f87171;
+        }
+
+        html.light {
+            --bg-color: #f0f4f5;
+            --text-color: #012a36;
+            --text-muted-color: #4a6a75;
+            --header-color: #1f3e49;
+            --primary-contrast-color: #ffffff;
+            --accent-color: #8c7351;
+            --accent-hover-color: #5e4d35;
+            --card-bg-color: rgba(255, 255, 255, 0.7);
+            --card-border-color: rgba(140, 115, 81, 0.3);
+            --input-bg-color: rgba(255, 255, 255, 0.8);
+            --input-border-color: rgba(140, 115, 81, 0.5);
+            --danger-color: #dc2626;
+            --danger-hover-color: #ef4444;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOCIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSKILz48L3N2Zz4=');
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: -1;
+            mix-blend-mode: overlay;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+            color: var(--header-color);
+        }
+        .btn {
+            @apply inline-flex items-center justify-center gap-2 px-6 py-2 bg-transparent border rounded-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+            border-color: var(--accent-color);
+            color: var(--header-color);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .btn:not(:disabled):hover {
+            background-color: var(--accent-color);
+            color: var(--primary-contrast-color);
+        }
+
+        .card {
+            @apply backdrop-blur-md p-6 rounded-sm shadow-2xl;
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--card-border-color);
+        }
+        .input-field, .textarea-field {
+            @apply w-full border rounded-sm py-2 px-3 text-slate-200 focus:outline-none focus:ring-2 focus:border-transparent transition-all;
+            background-color: var(--input-bg-color);
+            border-color: var(--input-border-color);
+            color: var(--text-color);
+            --tw-ring-color: var(--accent-hover-color);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover-color); }
+
+        .fade-in { animation: fadeInAnimation 0.7s ease-in forwards; }
+        @keyframes fadeInAnimation {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-black">
+    <div id="root"></div>
+</body>
+</html>

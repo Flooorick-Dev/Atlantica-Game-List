@@ -1,0 +1,5 @@
+{
+  "name": "Atlantica 1963",
+  "description": "An interactive, mobile-first web application for creating and managing characters in a retro-futuristic, dieselpunk world. Features include profession selection, attribute distribution, skill management, and a dynamic character sheet with sections for cyberware, software scripts, and gear.",
+  "requestFramePermissions": []
+}
